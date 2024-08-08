@@ -11,7 +11,7 @@ const clickHandler = () => {
 
 <template>
     <button @click="clickHandler">
-        {{ fetchUsers ? 'Hide results' : 'Fetch users' }}
+        {{ fetchUsers ? 'Hide results' : 'Fetch the users' }}
     </button>
 
     <UsersList v-if="fetchUsers" />
