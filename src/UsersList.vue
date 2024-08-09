@@ -1,6 +1,7 @@
 <script setup>
 import { onBeforeUnmount } from 'vue';
 import { onBeforeMount, onMounted, onUnmounted, ref } from 'vue';
+import User from './User.vue';
 
 const users = ref([]);
 const loading = ref(true);
@@ -36,35 +37,11 @@ onBeforeUnmount(() => {
 
 <template>
     <h1 v-if="loading">Fetching users...</h1>
-    <ul v-else id="users" v-for="(user, index) in users" :key="user.id">
-        <h2>{{ index }}</h2>
-        <li class="user">
-            <hr />
-            <span>{{ user.name }}</span>
-            <span>{{ user.email }}</span>
-        </li>
-    </ul>
+    <User
+        v-else
+        v-for="(user, index) in users"
+        :key="user.id"
+        :user="user"
+        :index="index"
+    />
 </template>
-
-<style scoped>
-h2 {
-    text-align: center;
-}
-ul {
-    list-style: none;
-    padding: 2rem 25vw;
-}
-li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-hr {
-    align-self: stretch;
-}
-span:first-of-type {
-    font-weight: 700;
-}
-</style>

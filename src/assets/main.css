@@ -19,4 +19,5 @@ body {
     gap: 1rem;
     min-height: 100vh;
     margin-block: 3rem;
+    align-items: center;
 }
