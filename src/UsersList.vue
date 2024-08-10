@@ -26,6 +26,10 @@ onBeforeMount(() => {
     console.log('%cOn before mounted', 'background:red;');
 });
 
+onBeforeMount(() => {
+    console.log('On before mounted 2');
+});
+
 onUnmounted(() => {
     console.log('%cOn unmounted', 'background:green;');
 });
@@ -39,9 +43,10 @@ onBeforeUnmount(() => {
     <h1 v-if="loading">Fetching users...</h1>
     <User
         v-else
-        v-for="(user, index) in users"
-        :key="user.id"
-        :user="user"
+        v-for="({ id, name, email }, index) in users"
+        :key="id"
+        :name="name"
+        :email="email"
         :index="index"
     />
 </template>

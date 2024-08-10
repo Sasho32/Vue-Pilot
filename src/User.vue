@@ -1,18 +1,20 @@
 <script setup>
-import { defineProps } from 'vue';
-
-defineProps({
-    user: Object,
+const props = defineProps({
+    name: String,
+    email: String,
     index: Number,
 });
+
+console.log(props.name);
 </script>
 
 <template>
     <h2>{{ index }}</h2>
     <div class="user">
         <hr />
-        <span class="username">{{ user.name }}</span>
-        <span>{{ user.email }}</span>
+        <span class="username">{{ name }}</span>
+        <!-- tyka moje da dostypvame i prez var-a -> props.name vypreki che nz za kvo she mi e ama e vyzmojno, ne gyrmi -->
+        <span>{{ email }}</span>
     </div>
 </template>
 
