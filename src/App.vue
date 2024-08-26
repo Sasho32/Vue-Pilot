@@ -8,6 +8,8 @@ import RandomMessage from '@/RandomMessage.vue';
 import Wrapper from '@/Wrapper.vue';
 import Me from '@/Me.vue';
 
+import ParentInput from './components/ParentInput.vue';
+
 const fetchUsers = ref(false);
 
 const clickHandler = () => {
@@ -16,6 +18,7 @@ const clickHandler = () => {
 </script>
 
 <template>
+    <ParentInput />
     <!-- html attr ili prop podaden s : -> vs v kavichkite e js -->
     <Me :message="fetchUsers" />
     <RandomMessage :message="fetchUsers" />
